@@ -13,35 +13,35 @@
 using namespace std;
 
 int main() {
-    string finDeProgramme   = "O";                      //Declaration des variable
-    int limite          = 0;
-    int testChiffre     = 2;
-    int tour            = 0;
+    string finDeProgramme   = "O";
+    int limite              = 0;
+    int testChiffre         = 2;
+    int tour                = 0;
+
     do{
         do {
             cout << "Rentrez un nombre entre 2-1000 : ";
             cin >> limite;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-            if(limite > 1000 or limite < 2)                                                 //On va tester l'entrée de l'utilisateur pour lui afficher un message d'erreur si elle ne corresponds pas au critère
+            if(limite > 1000 or limite < 2)
                 cout << "Vous n'avez pas choisi un nombre correct. Ressayez !" << endl;
         }
-        while (limite > 1000 or limite < 2);                                                //On va tester si le chiffre rentré par l'utilisateur est entre 2 et 1000 sinon il doit recommencer
+        while (limite > 1000 or limite < 2);
 
-        while(testChiffre <= limite){                                                       //On test si le chiffre tester est égal ou en dessous de la limite afin de ne pas dépasser la limite
-            cout << "\t" << testChiffre;                                                    //On affiche les nombre premier avec une tabulations avant
+        while(testChiffre <= limite){
+            cout << "\t" << testChiffre;
             testChiffre++;
             tour++;
-
-            for (int chiffreDivision = 2; chiffreDivision < testChiffre and testChiffre <= limite; chiffreDivision++) {                 //On regarde si le chiffre par lequel on fait la division est plus petit que le chiffre tester et que le chiffre tester ne dépasse pas la limite
-                if(testChiffre % chiffreDivision == 0) {                                                                                //On regarde si le chiffre tester ne donne aucun reste après la divion
+            for (int chiffreDivision = 2; chiffreDivision < testChiffre and testChiffre <= limite; chiffreDivision++) {
+                if(testChiffre % chiffreDivision == 0) {
                     chiffreDivision = 2;
                     testChiffre++;
-                    continue;                                                                                                           //Si c'est le cas alors on remonte la boucle en incrémantant le chiffre tester de 1 et en remettant chiffreDvision à 2
+                    continue;
                 }
             }
-            if(tour == 5) {                                                                                                             //On test si nous avons deja affiché 5 nombre
-                cout << "\n";                                                                                                           //Si c'est le cas on fait un retour à la ligne
+            if(tour == 5) {
+                cout << "\n";
                 tour = 0;
             }
         }
@@ -50,11 +50,11 @@ int main() {
             cout << "\n Voulez-vous recommencer ? (O/N) : ";
             cin >> finDeProgramme;
         }
-        while (finDeProgramme != "O" and finDeProgramme != "N");                                //On boucle tant que l'utilisateur n'a pas rentré O ou N
-    }while(finDeProgramme == "O");                                                              //On remonte a la seconde boucle do while si l'utilisateur à rentré O
+        while (finDeProgramme != "O" and finDeProgramme != "N");
+    }while(finDeProgramme == "O");
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << "\n \n Fin de Programme , pressez enter ";                                          //On affiche un message pour signaler la fin du programme
+    cout << "\n \n Fin de Programme , pressez enter ";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     return EXIT_SUCCESS;
 }
