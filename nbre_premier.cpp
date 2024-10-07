@@ -22,7 +22,6 @@ int main() {
         do {
             cout << "Rentrez un nombre entre 2-1000 : ";
             cin >> limite;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             if(limite > 1000 or limite < 2)
                 cout << "Vous n'avez pas choisi un nombre correct. Ressayez !" << endl;
@@ -51,6 +50,8 @@ int main() {
             cin >> finDeProgramme;
         }
         while (finDeProgramme != "O" and finDeProgramme != "N");
+        testChiffre = 2;
+        tour = 0;
     }while(finDeProgramme == "O");
 
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
