@@ -1,0 +1,3 @@
+- Pas de constantes utilisées pour les limites et les entrées utilisateurs ('N' et 'O').
+- Non respect de l'affichage selon la donnée
+- Utilisation de la lib limit
